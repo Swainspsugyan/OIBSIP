@@ -16,7 +16,7 @@ public class ATM {
 	       int pin = sc.nextInt();
 
 	        //Current Balance and PIN 
-	        AtmTest atm = new AtmTest(50000 , 7978);
+	        AtmTest atm = new AtmTest(50000 , 0000);
           
          // validation of ID and Pin Number
 	         if (atm.getPin()== pin  && atm.getId(ID)==(ID)) {
