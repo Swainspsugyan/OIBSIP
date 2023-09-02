@@ -88,6 +88,22 @@ public class Main {
                         user.updateProfile(newUsername, newPassword);
                         break;
                     case 2:
+
+                        // Create a timer
+                        Timer timer = new Timer();
+
+                        // Create a task to be executed after 1 minute
+                        TimerTask task = new TimerTask() {
+                            @Override
+                            public void run() {
+                                // Submit the quiz
+                                System.out.println("Quiz submitted!");
+                                System.exit(0);
+                            }
+                        };
+
+                        // Schedule the task to be executed after 1 minute
+                        timer.schedule(task, 60000); // 1 minute in milliseconds
                         mcqs.displayQuestion();
                         System.out.print("Enter your answer (1-4): ");
                         int selectedOption = scanner.nextInt();
