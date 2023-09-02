@@ -3,17 +3,17 @@ import java.util.Scanner;
 
 public class GuessTheNumber {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         Random random = new Random();
 
         int minRange = 1;
         int maxRange = 100;
-        int maxAttempts = 5;
+        int maxAttempts = 10;
         int totalRounds = 3;
         int totalScore = 0;
 
-        System.out.println("Welcome to Guess the Number!");
-        System.out.println("You have " + totalRounds + " rounds to play.");
+        System.out.println("Welcome to Guess the Number Game!");
+        System.out.println("You have total " + totalRounds + " rounds to play.");
 
         for (int round = 1; round <= totalRounds; round++) {
             int targetNumber = random.nextInt(maxRange - minRange + 1) + minRange;
@@ -23,7 +23,7 @@ public class GuessTheNumber {
 
             while (attempts < maxAttempts) {
                 System.out.print("Attempt " + (attempts + 1) + "/" + maxAttempts + ": Enter your guess: ");
-                int userGuess = scanner.nextInt();
+                int userGuess = sc.nextInt();
                 attempts++;
 
                 if (userGuess < minRange || userGuess > maxRange) {
@@ -48,6 +48,6 @@ public class GuessTheNumber {
 
         System.out.println("\nGame Over!");
         System.out.println("Total Score: " + totalScore);
-        scanner.close();
+        sc.close();
     }
 }
